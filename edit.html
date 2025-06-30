@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User - Flask CRUD App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Edit User</h1>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5>Edit Data User</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('edit_user', id=user[0]) }}" method="POST">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" value="{{ user[1] }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ user[2] }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password (Kosongkan jika tidak ingin mengubah)</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Kembali</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
